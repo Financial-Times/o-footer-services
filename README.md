@@ -45,10 +45,10 @@ If you would rather _not_ have origami classnames on your page, don't switch off
 @include oFooterServicesBase($class: 'my-footer');
 ```
 
-This will only provide styling for footers without a logo, so if you are planning on incorporating a logo in your footer, you'll need to use the `oFooterServicesWithLogo` mixin and provide the image for it.
+This will only provide styling for footers without a logo, so if you are planning on incorporating a logo in your footer, you'll need to use the `oFooterServicesWithLogo` mixin. This mixin uses the [Image Service](https://www.ft.com/__origami/service/image/v2), so if you would like to add your logo to the [logo-images image set](https://registry.origami.ft.com/components/logo-images@1.7.0), please [get in touch with us](#contact).
 
 ```sass
-@include oFooterServicesWithLogo($image: 'the/url/goes/here', class: 'my-footer');
+@include oFooterServicesWithLogo($image: 'logo-name', class: 'my-footer');
 ```
 
 ## Migration Guide
@@ -82,7 +82,8 @@ All previous variations of the footer have been discontinued. To illustrate the 
 </footer>
 ```
 
-`o-footer-services--wide` is no longer an available class.
+`o-footer-services--wide` is no longer an available class.  
+
 ---
 
 ## Contact
