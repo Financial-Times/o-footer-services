@@ -1,4 +1,4 @@
- o-footer-services [![Circle CI](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master)
+o-footer-services [![Circle CI](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master)
 =================
 
 o-footer-services is a footer component for internal products and tooling  at the FT.
@@ -31,7 +31,8 @@ A footer requires the following markup:
 </footer>
 ```
 
-All elements within the `.o-footer-servces__wrapper--top` section are entirely optional. You can find  examples of the variations [in the registry](https://registry.origami.ft.com/components/o-footer-services@1.0.2).
+All elements within the `.o-footer-servces__wrapper--top` section are entirely optional. You can find  examples of the variations [in the registry](https://registry.origami.ft.com/components/o-footer-services@1.0.2).  
+
 As a move to future proof this component and the products that may use it, **`.o-footer-services__wrapper--legal` is not optional.**
 
 ### Sass

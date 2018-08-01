@@ -65,18 +65,16 @@
 	}
 
 	.#{$class}__icon-link {
-		a & {
-			@include oTypographyBold('sans');
-			@include oFooterServicesLink(
-			$custom-link-base: _oFooterServicesGet('default-link-color'),
-			$custom-link-hover: _oFooterServicesGet('default-link-hover'),
-			$custom-link-background: _oFooterServicesGet('default-background')
-			)
+		@include oTypographyBold('sans');
+		@include oFooterServicesLink(
+		$custom-link-base: _oFooterServicesGet('default-link-color'),
+		$custom-link-hover: _oFooterServicesGet('default-link-hover'),
+		$custom-link-background: _oFooterServicesGet('default-background')
+		)
 
-			display: inline-block;
-			min-width: max-content;
-			margin: 0 1em 1.5em 0;
-		}
+		display: inline-block;
+		min-width: max-content;
+		margin: 0 1em 1.5em 0;
 
 		&--slack {
 			@include oFooterServicesIcons('slack');
