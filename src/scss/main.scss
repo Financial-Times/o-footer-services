@@ -64,17 +64,19 @@
 		}
 	}
 
-	a.#{$class}__icon-link {
-		@include oTypographyBold('sans');
-		@include oFooterServicesLink(
+	.#{$class}__icon-link {
+		a & {
+			@include oTypographyBold('sans');
+			@include oFooterServicesLink(
 			$custom-link-base: _oFooterServicesGet('default-link-color'),
 			$custom-link-hover: _oFooterServicesGet('default-link-hover'),
 			$custom-link-background: _oFooterServicesGet('default-background')
-		)
+			)
 
-		display: inline-block;
-		min-width: max-content;
-		margin: 0 1em 1.5em 0;
+			display: inline-block;
+			min-width: max-content;
+			margin: 0 1em 1.5em 0;
+		}
 
 		&--slack {
 			@include oFooterServicesIcons('slack');
@@ -96,7 +98,7 @@
 		margin: 0 1.5em 1.5em 0;
 
 		position: relative;
-		padding-left: calc(#{$_o-footer-services-logo-size} + .5em);
+		padding-left: calc(#{$_o-footer-services-logo-size} + 0.5em);
 
 		&:before {
 			@include oIconsBaseStyles();
