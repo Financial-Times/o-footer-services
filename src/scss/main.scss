@@ -3,10 +3,7 @@
 		@include oTypographySans(0);
 		background: oColorsGetPaletteColor(_oFooterServicesGet('default-background'));
 	}
-	//
-	// .#{$class}--wide {
-	//
-	// }
+
 	.#{$class}__container {
 		width: 100%;
 		position: relative;
@@ -31,6 +28,20 @@
 
 			p {
 				display: inline-block;
+			}
+		}
+
+		&--legal {
+			@include oTypographySans(-1);
+			color: oColorsGetPaletteColor(_oFooterServicesGet('legal-text'));
+
+			a {
+				@include oFooterServicesLink(
+					$custom-link-base: _oFooterServicesGet('legal-text'),
+					$custom-link-hover: _oFooterServicesGet('legal-text'),
+					$custom-link-background: _oFooterServicesGet('default-background'),
+					$link-hover: _oFooterServicesGet('legal-link-hover')
+				);
 			}
 		}
 	}
@@ -71,20 +82,6 @@
 
 		&--github {
 			@include oFooterServicesIcons('github');
-		}
-	}
-
-	.#{$class}__wrapper--legal {
-		@include oTypographySans(-1);
-		color: oColorsGetPaletteColor(_oFooterServicesGet('legal-text'));
-
-		a {
-			@include oFooterServicesLink(
-				$custom-link-base: _oFooterServicesGet('legal-text'),
-				$custom-link-hover: _oFooterServicesGet('legal-text'),
-				$custom-link-background: _oFooterServicesGet('default-background'),
-				$link-hover: _oFooterServicesGet('legal-link-hover')
-			);
 		}
 	}
 }

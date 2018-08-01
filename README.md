@@ -1,4 +1,4 @@
-o-footer-services [![Circle CI](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master)
+ o-footer-services [![Circle CI](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-footer-services/tree/master)
 =================
 
 o-footer-services is a footer component for internal products and tooling  at the FT.
@@ -6,6 +6,7 @@ o-footer-services is a footer component for internal products and tooling  at th
 - [Usage](#usage)
 	- [Markup](#markup)
 	- [Sass](#sass)
+- [Migration Guide](#migration-guide)
 - [Contact](#contact)
 - [Licence](#licence)
 
@@ -13,40 +14,26 @@ o-footer-services is a footer component for internal products and tooling  at th
 
 ### Markup
 
-For a simple footer, you'll need the following markup:
-
+A footer requires the following markup:
 ```html
 <footer class="o-footer-services">
 	<div class="o-footer-services__container">
-		<p class="o-footer-services__source-code"><a href="http://github.com/financial-times/o-footer-services">View project on GitHub</a></p>
-		<p class="o-footer-services__copyright">&copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
+		<div class="o-footer-services__wrapper o-footer-services__wrapper--top">
+			<p class="o-footer-services__logo">Origami</p>
+			<a class="o-footer-services__icon-link o-footer-services__icon-link--github" href="http://github.com/financial-times/o-footer-services">View project on GitHub</a>
+			<a class="o-footer-services__icon-link o-footer-services__icon-link--slack" href="https://slack.com/messages/[id]/">#slack-channel</a>
+			<p class="o-footer-services__content">Help or advice can be found here <a href="mailto:an.email@someplace.com">an.email@someplace.com</a> and there are other places, <a class="o-footer-services__content--external" href='/somewhere'>like this one</a>.</p>
+		</div>
 	</div>
+	<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
+		<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. &copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
+	</p>
 </footer>
 ```
 
-If your footer has more information, a full footer uses markup like this:
-```html
-<footer class="o-footer-services">
-	<div class="o-footer-services__container">
-		<div class="o-footer-services__info">
-			<span class="o-footer-services__logo">Origami</span>
-			<p class="o-footer-services__contact-email">Help or advice can be found here <a class="link" href="mailto:an.email@someplace.com">an.email@someplace.com</a> and there are other places, <a href='/somewhere'>like this one</a> where you can find help, too.</p>
-			<p class="o-footer-services__contact-slack"><img src='link/to/icon'/><a href="https://slack.com/messages/[id]/">#slack-channel</a></p>
-		</div>
-		<div class="o-footer-services__base">
-			<p class="o-footer-services__source-code"><a href="http://github.com/financial-times/o-footer-services">View project on GitHub</a></p>
-			<p class="o-footer-services__copyright">&copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
-		</div>
-	</div>
-</footer>
-```
+All elements within the `.o-footer-servces__wrapper--top` section are entirely optional.
+As a move to future proof this component and the products that may use it, `.o-footer-services__wrapper--legal` is not optional.
 
-For the widest version of a footer, you can apply the variant `o-footer-services--wide` to the footer element: 
-```html
-<footer class="o-footer-services o-footer-services--wide">
-	<!-- Footer elements -->
-</footer>
-```
 ### Sass
 
 As with all Origami components, o-footer-services has a [silent mode](http://origami.ft.com/docs/syntax/scss/#silent-styles). To use its compiled CSS (rather than using its mixins with your own Sass) set `$o-footer-services-is-silent: false;` in your Sass before you import the o-footer-services Sass.
@@ -63,6 +50,38 @@ This will only provide styling for footers without a logo, so if you are plannin
 @include oFooterServicesWithLogo($image: 'the/url/goes/here', class: 'my-footer');
 ```
 
+## Migration Guide
+
+### Migrating from v1 to v2
+
+This major includes a change in markup and an entirely new design, which is compliant with legal requirements within internal FT tooling and products.
+
+All previous variations of the footer have been discontinued. To illustrate the change in markup, this difference is between the full footer and the new footer that has been introduced with this major:
+```diff
+<footer class="o-footer-services">
+	<div class="o-footer-services__container">
+-		<div class="o-footer-services__info">
++		<div class="o-footer-services__wrapper o-footer-services__wrapper--top">
+-			<span class="o-footer-services__logo">Origami</span>
++			<p class="o-footer-services__logo">Origami</p>
++			<a class="o-footer-services__icon-link o-footer-services__icon-link--github" href="#">View project on GitHub</a>
++			<a class="o-footer-services__icon-link o-footer-services__icon-link--slack" href="#">#slack-channel</a>
+-			<p class="o-footer-services__content">Help or advice can be found here <a class="link" href="mailto:an.email@someplace.com">an.email@someplace.com</a> and there are other places, <a href='/somewhere'>like this one</a> where you can find help, too.</p>
+-			<p class="o-footer-services__contact-email">Help or advice can be found here <a class="link" href="mailto:an.email@someplace.com">an.email@someplace.com</a> and there are other places, <a class="o-footer-services__content--external" href='external-link'>like this one</a> where you can find help, too.</p>
+-			<p class="o-footer-services__contact-slack"><img src='link/to/icon'/><a href="https://slack.com/messages/[id]/">#slack-channel</a></p>
+		</div>
+-		<div class="o-footer-services__base">
+-			<p class="o-footer-services__source-code"><a href="http://github.com/financial-times/o-footer-services">View project on GitHub</a></p>
+-			<p class="o-footer-services__copyright">&copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
+-		</div>
++		<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
++			<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. &copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
++		</p>
+	</div>
+</footer>
+```
+
+`o-footer-services--wide` is no longer an available class.
 ---
 
 ## Contact

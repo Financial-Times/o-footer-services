@@ -25,30 +25,6 @@
 			"name": "footer",
 			"template": "demos/src/footer.mustache",
 			"description": "As it should foot."
-		},
-		{
-			"title": "Simple Footer",
-			"name": "simple-footer",
-			"template": "demos/src/simple-footer.mustache",
-			"description": "Simple footer with copyright and source code link, no logo"
-		},
-		{
-			"title": "Copyright Logo Footer",
-			"name": "copyright-logo",
-			"template": "demos/src/copyright-logo.mustache",
-			"description": "Footer with copyright and logo"
-		},
-		{
-			"title": "Full Footer",
-			"name": "full-footer",
-			"template": "demos/src/full-footer.mustache",
-			"description": "Footer with contact, copyright and logo"
-		},
-		{
-			"title": "Slim Footer",
-			"name": "slim-footer",
-			"template": "demos/src/slim-footer.mustache",
-			"description": "Footer with contact and copyright, no logo"
 		}
 	]
 }

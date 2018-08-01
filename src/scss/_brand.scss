@@ -16,7 +16,6 @@ $_o-footer-services-shared-brand-config: (
 	default-link-hover: 'black-60',
 	legal-text: 'black-60',
 	legal-link-hover: 'black-80',
-	// default-border: 1px solid oColorsGetPaletteColor()'black-60');
 );
 
 @include oBrandDefine('o-footer-services', 'master', (
