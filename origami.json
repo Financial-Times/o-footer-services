@@ -21,6 +21,12 @@
 	},
 	"demos": [
 		{
+			"title": "Footer",
+			"name": "footer",
+			"template": "demos/src/footer.mustache",
+			"description": "As it should foot."
+		},
+		{
 			"title": "Simple Footer",
 			"name": "simple-footer",
 			"template": "demos/src/simple-footer.mustache",

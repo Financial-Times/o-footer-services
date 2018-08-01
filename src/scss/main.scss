@@ -1,56 +1,118 @@
 @mixin oFooterServicesBase($class: 'o-footer-services') {
 	.#{$class} {
 		@include oTypographySans(0);
-		@include oTypographyPadding($top: 2, $bottom: 2);
-		@include oGridContainer($bleed: true);
-		border-top: 4px solid _oFooterServicesGet('default-border');
-
-		a {
-			@include oTypographyLink();
-			border-bottom: 0;
-		}
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 1220px) 1fr;
+		background: oColorsGetPaletteColor(_oFooterServicesGet('default-background'));
 	}
-	
-	.#{$class}--wide {
-		max-width: 100%;
-		margin: 0;
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+	//
+	// .#{$class}--wide {
+	//
+	// }
 
 	.#{$class}__container {
-		margin: 0 oTypographySpacingSize(5);
+		grid-column: 2 / span 1;
+		padding: 0 20px;
 	}
 
-	.#{$class}__contact-slack {
-		@include oFooterServicesIcons('slack');
-		margin: 0;
+	.#{$class}__top {
+		min-height: 80px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		padding-top: 1em;
+		position: relative;
+
+		a {
+			@include oFooterServicesLink(
+				$custom-link-base: _oFooterServicesGet('default-link-color'),
+				$custom-link-hover: _oFooterServicesGet('default-link-color'),
+				$custom-link-background: _oFooterServicesGet('default-background'),
+				$link-hover: _oFooterServicesGet('default-link-hover')
+			);
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			border-top: 1px solid grey;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
 	}
 
-	.#{$class}__source-code {
-		@include oFooterServicesIcons('github');
-		float: right;
-		margin: 0;
+	.#{$class}__content {
+		margin: 0 0 1em;
 	}
+
+	.#{$class}__icon-link {
+		@include oTypographyBold('sans');
+		min-width: max-content;
+		margin: 0 24px 1em 0;
+
+		a {
+			@include oFooterServicesLink(
+				$custom-link-base: _oFooterServicesGet('default-link-color'),
+				$custom-link-hover: _oFooterServicesGet('default-link-hover'),
+				$custom-link-background: _oFooterServicesGet('default-background')
+			)
+		}
+
+		&--slack {
+			@include oFooterServicesIcons('slack');
+		}
+
+		&--github {
+			@include oFooterServicesIcons('github');
+		}
+	}
+
+	.#{$class}__legal {
+		@include oTypographySans(-1);
+		color: oColorsGetPaletteColor(_oFooterServicesGet('legal-text'));
+		padding: 1em 0;
+		margin: 0;
+
+		a {
+			@include oFooterServicesLink(
+				$custom-link-base: _oFooterServicesGet('legal-text'),
+				$custom-link-hover: _oFooterServicesGet('legal-text'),
+				$custom-link-background: _oFooterServicesGet('default-background'),
+				$link-hover: _oFooterServicesGet('legal-link-hover')
+			);
+		}
+	}
+	// .#{$class}__contact-slack,
+	// .#{$class}__icon-link--slack {
+	// }
+
+	// .#{$class}__source-code,
+	// .#{$class}__icon-link--github {
+	// }
 }
 
-@mixin oFooterServicesWithLogo($logo-image, $class: 'o-footer-services') {
+@mixin oFooterServicesWithLogo($logo, $class: 'o-footer-services') {
 	@include oFooterServicesBase;
 
-
 	.#{$class}__logo {
-		@include oTypographyMargin($top: -2, $bottom: 2);
 		@include oTypographySansBold(1);
-		float: right;
+		min-width: max-content;
+		margin: 0 24px 1em 0;
+
+		position: relative;
+		padding-left: calc(40px + .5em);
 
 		&:before {
 			@include oIconsBaseStyles();
-			background-image: url($logo-image);
+			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:#{$logo}?source=o-footer-services');
 			content: '';
 			width: 40px;
 			height: 40px;
-			vertical-align: middle;
-			margin-right: 10px;
+			position: absolute;
+			top: -10px;
+			left: 0;
 		}
 	}
 }
@@ -69,5 +131,21 @@
 		vertical-align: middle;
 		top: -5px;
 		left: -5px;
+	}
+}
+
+@mixin oFooterServicesLink($custom-link-base, $custom-link-hover, $custom-link-background, $link-hover: null) {
+	@include oTypographyLinkCustom(
+		$custom-link-base,
+		$custom-link-hover,
+		$custom-link-background
+	);
+
+	@if $link-hover != null {
+		&:hover {
+			border-bottom-color: oColorsGetPaletteColor($link-hover); // is different to custom link hover by design.
+		}
+	} @else {
+		border-bottom: 0;
 	}
 }
