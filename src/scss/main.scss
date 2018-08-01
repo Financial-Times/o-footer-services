@@ -47,7 +47,7 @@
 	}
 
 	.#{$class}__content {
-		margin: 0 0 1em;
+		margin: 0 0 1.5em;
 
 		a {
 			@include oFooterServicesLink(
@@ -92,6 +92,7 @@
 	.#{$class}__logo {
 		@include oTypographySansBold(1);
 		min-width: max-content;
+		min-height: 1em; //holds the logo in place if there is no text
 		margin: 0 1.5em 1.5em 0;
 
 		position: relative;
