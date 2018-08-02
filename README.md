@@ -25,9 +25,11 @@ A footer requires the following markup:
 			<p class="o-footer-services__content">Help or advice can be found here <a href="mailto:an.email@someplace.com">an.email@someplace.com</a> and there are other places, <a class="o-footer-services__content--external" href='/somewhere'>like this one</a>.</p>
 		</div>
 	</div>
-	<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
-		<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. &copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
-	</p>
+	<div class="o-footer-services__container">
+		<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
+			<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. <span>&copy; THE FINANCIAL TIMES LTD.<span> FT and 'Financial Times' are trademarks of The Financial Times Ltd.
+		</p>
+	</div>
 </footer>
 ```
 
@@ -75,9 +77,11 @@ All previous variations of the footer have been discontinued. To illustrate the 
 -			<p class="o-footer-services__source-code"><a href="http://github.com/financial-times/o-footer-services">View project on GitHub</a></p>
 -			<p class="o-footer-services__copyright">&copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
 -		</div>
-+		<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
-+			<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. &copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
-+		</p>
++		<div class="o-footer-services__container">
++			<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
++				<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. <span>&copy; THE FINANCIAL TIMES LTD.<span> FT and 'Financial Times' are trademarks of The Financial Times Ltd.
++			</p>
++		</div>
 	</div>
 </footer>
 ```

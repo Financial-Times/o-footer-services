@@ -11,8 +11,8 @@
 		&:before {
 			content: '';
 			position: absolute;
-			border-top: 1px solid grey;
-			bottom: 0;
+			border-top: 1px solid oColorsGetPaletteColor(_oFooterServicesGet('default-border'));
+			top: 0;
 			left: 0;
 			right: 0;
 		}
@@ -32,8 +32,12 @@
 		}
 
 		&--legal {
-			@include oTypographySans(-1);
+			@include oTypographySans($scale: -1, $line-height: 20px);
 			color: oColorsGetPaletteColor(_oFooterServicesGet('legal-text'));
+
+			span {
+				white-space: nowrap;
+			}
 
 			a {
 				@include oFooterServicesLink(
@@ -56,7 +60,6 @@
 				$custom-link-background: _oFooterServicesGet('default-background'),
 				$link-hover: _oFooterServicesGet('default-link-hover')
 			);
-
 		}
 
 		.#{$class}__content--external {
