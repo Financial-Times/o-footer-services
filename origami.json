@@ -21,10 +21,10 @@
 	},
 	"demos": [
 		{
-			"title": "Footer",
-			"name": "footer",
-			"template": "demos/src/footer.mustache",
-			"description": "The full internal product and tooling footer"
+			"title": "Footer Legal",
+			"name": "footer-legal",
+			"template": "demos/src/footer-legal.mustache",
+			"description": "The most minimal version of the footer. Should not be treated as optional."
 		},
 		{
 			"title": "Footer Links",
@@ -33,21 +33,15 @@
 			"description": "Minimal footer with links"
 		},
 		{
-			"title": "Footer No Content",
-			"name": "footer-no-content",
-			"template": "demos/src/footer-no-content.mustache",
-			"description": "Minimal footer without content"
-		},
-		{
 			"title": "Footer Content Only",
 			"name": "footer-content-only",
 			"template": "demos/src/footer-content-only.mustache",
 			"description": "Minimal footer without content"
 		},
 		{
-			"title": "Footer Logo & Content",
-			"name": "footer-logo-content",
-			"template": "demos/src/footer-logo-content.mustache",
+			"title": "Footer No Content",
+			"name": "footer-no-content",
+			"template": "demos/src/footer-no-content.mustache",
 			"description": "Minimal footer without content"
 		},
 		{
@@ -57,10 +51,16 @@
 			"description": "Minimal footer with logo"
 		},
 		{
-			"title": "Footer Legal",
-			"name": "footer-legal",
-			"template": "demos/src/footer-legal.mustache",
-			"description": "The most minimal version of the footer. Should not be treated as optional."
+			"title": "Footer Logo & Content",
+			"name": "footer-logo-content",
+			"template": "demos/src/footer-logo-content.mustache",
+			"description": "Minimal footer without content"
+		},
+		{
+			"title": "Footer",
+			"name": "footer",
+			"template": "demos/src/footer.mustache",
+			"description": "The full internal product and tooling footer"
 		}
 	]
 }
