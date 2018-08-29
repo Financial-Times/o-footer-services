@@ -26,14 +26,19 @@ A footer requires the following markup:
 		</div>
 	</div>
 	<div class="o-footer-services__container">
-		<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
-			<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. <span>&copy; THE FINANCIAL TIMES LTD.<span> FT and 'Financial Times' are trademarks of The Financial Times Ltd.
-		</p>
+		<div class="o-footer-services__wrapper o-footer-services__wrapper--legal">
+			<div class="o-footer-services__links">
+			<a href="http://help.ft.com/help/legal-privacy/cookies/">Cookies</a>
+			<a href="http://help.ft.com/help/legal-privacy/copyright/copyright-policy/">Copyright</a>
+			<a href="http://help.ft.com/help/legal-privacy/privacy/" class="o-footer-services__bulletted-link">Privacy</a>
+			<a href="http://help.ft.com/help/legal-privacy/terms-conditions">Terms & Conditions</a>
+		</div>
+		<p><span>&copy; THE FINANCIAL TIMES LTD 2018.</span> FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
 	</div>
 </footer>
 ```
 
-All elements within the `.o-footer-servces__wrapper--top` section are entirely optional. You can find  examples of the variations [in the registry](https://registry.origami.ft.com/components/o-footer-services@1.0.2).  
+All elements within the `.o-footer-servces__wrapper--top` section are entirely optional. You can find examples of the variations [in the registry](https://registry.origami.ft.com/components/o-footer-services@1.0.2).  
 
 As a move to future proof this component and the products that may use it, **`.o-footer-services__wrapper--legal` is not optional.**
 
@@ -78,10 +83,16 @@ All previous variations of the footer have been discontinued. To illustrate the 
 -			<p class="o-footer-services__copyright">&copy; THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
 -		</div>
 +		<div class="o-footer-services__container">
-+			<p class="o-footer-services__wrapper o-footer-services__wrapper--legal">
-+				<a href="#">Terms & Conditions</a> and <a href="#">Privacy</a>. <span>&copy; THE FINANCIAL TIMES LTD.<span> FT and 'Financial Times' are trademarks of The Financial Times Ltd.
-+			</p>
-+		</div>
++			<div class="o-footer-services__wrapper o-footer-services__wrapper--legal">
++				<div class="o-footer-services__links">
++					<a href="http://help.ft.com/help/legal-privacy/cookies/">Cookies</a>
++					<a href="http://help.ft.com/help/legal-privacy/copyright/copyright-policy/">Copyright</a>
++					<a href="http://help.ft.com/help/legal-privacy/privacy/" class="o-footer-services__bulletted-link">Privacy</a>
++					<a href="http://help.ft.com/help/legal-privacy/terms-conditions">Terms & Conditions</a>
++				</div>
++				<p><span>&copy; THE FINANCIAL TIMES LTD 2018.</span> FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p>
++			</div>
++		<div>
 	</div>
 </footer>
 ```
