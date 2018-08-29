@@ -21,7 +21,7 @@
 	.#{$class}__wrapper {
 		max-width: 1220px;
 		margin: 0 auto;
-		padding: 1em;
+		padding: 0.5em 1em;
 
 		&--top {
 		padding: 1.5em 1em 0;
@@ -34,19 +34,31 @@
 		&--legal {
 			@include oTypographySans($scale: -1, $line-height: 20px);
 			color: oColorsGetPaletteColor(_oFooterServicesGet('legal-text'));
+			overflow: hidden;
+
+			p {
+				margin: 0.5em 0;
+				float: left;
+			}
 
 			span {
 				white-space: nowrap;
 			}
+		}
+	}
 
-			a {
-				@include oFooterServicesLink(
-					$custom-link-base: _oFooterServicesGet('legal-text'),
-					$custom-link-hover: _oFooterServicesGet('legal-text'),
-					$custom-link-background: _oFooterServicesGet('default-background'),
-					$link-hover: _oFooterServicesGet('legal-link-hover')
-				);
-			}
+	.#{$class}__links {
+		float: left;
+		margin: 0.5em 0;
+
+		a {
+			@include oFooterServicesLink(
+				$custom-link-base: _oFooterServicesGet('legal-text'),
+				$custom-link-hover: _oFooterServicesGet('legal-text'),
+				$custom-link-background: _oFooterServicesGet('default-background'),
+				$link-hover: _oFooterServicesGet('legal-link-hover')
+			);
+			margin-right: 0.5em;
 		}
 	}
 
