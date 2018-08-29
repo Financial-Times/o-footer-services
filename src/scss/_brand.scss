@@ -20,7 +20,10 @@ $_o-footer-services-shared-brand-config: (
 );
 
 @include oBrandDefine('o-footer-services', 'master', (
-	'variables': $_o-footer-services-shared-brand-config,
+	'variables': map-merge($_o-footer-services-shared-brand-config, (
+		'default-background': 'black-5',
+		'default-border': 'black-20',
+	)),
 	'supports-variants': ()
 ));
 

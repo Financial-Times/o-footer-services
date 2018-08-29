@@ -6,7 +6,7 @@
     "main.scss"
   ],
   "dependencies": {
-    "o-colors": "^4.2.4",
+    "o-colors": "^4.7.1",
     "o-typography": "^5.6.0",
     "o-brand": ">=2.2.0 <4",
     "o-icons": "^5.6.1"
