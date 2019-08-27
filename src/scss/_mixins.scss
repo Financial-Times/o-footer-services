@@ -1,4 +1,4 @@
-@mixin oFooterServicesBase($class: 'o-footer-services') {
+@mixin _oFooterServicesBase($class: 'o-footer-services') {
 	.#{$class} {
 		@include oTypographySans(0);
 		background: oColorsGetPaletteColor(_oFooterServicesGet('default-background'));
@@ -52,7 +52,7 @@
 		margin: 0.5em 0;
 
 		a {
-			@include oFooterServicesLink(
+			@include _oFooterServicesLink(
 				$custom-link-base: _oFooterServicesGet('legal-text'),
 				$custom-link-hover: _oFooterServicesGet('legal-text'),
 				$custom-link-background: _oFooterServicesGet('default-background'),
@@ -66,7 +66,7 @@
 		margin: 0 0 1.5em;
 
 		a {
-			@include oFooterServicesLink(
+			@include _oFooterServicesLink(
 				$custom-link-base: _oFooterServicesGet('default-link-color'),
 				$custom-link-hover: _oFooterServicesGet('default-link-color'),
 				$custom-link-background: _oFooterServicesGet('default-background'),
@@ -78,32 +78,9 @@
 			@include oTypographyLinkExternalIcon(oColorsGetPaletteColor(_oFooterServicesGet('default-link-color')));
 		}
 	}
-
-	.#{$class}__icon-link {
-		@include oTypographyBold('sans');
-		@include oFooterServicesLink(
-			$custom-link-base: _oFooterServicesGet('default-link-color'),
-			$custom-link-hover: _oFooterServicesGet('default-link-hover'),
-			$custom-link-background: _oFooterServicesGet('default-background')
-		);
-
-		display: inline-block;
-		min-width: max-content;
-		margin: 0 1em 1.5em 0;
-
-		&--slack {
-			@include oFooterServicesIcons('slack');
-		}
-
-		&--github {
-			@include oFooterServicesIcons('github');
-		}
-	}
 }
 
-@mixin oFooterServicesWithLogo($logo, $class: 'o-footer-services') {
-	@include oFooterServicesBase;
-
+@mixin _oFooterServicesLogo($logo, $class: 'o-footer-services') {
 	.#{$class}__logo {
 		@include oTypographySansBold(1);
 		min-width: max-content;
@@ -115,7 +92,7 @@
 
 		&:before {
 			@include oIconsBaseStyles();
-			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:#{$logo}?source=o-footer-services');
+			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/#{$logo}?source=o-footer-services');
 			content: '';
 			width: $_o-footer-services-logo-size;
 			height: $_o-footer-services-logo-size;
@@ -126,7 +103,7 @@
 	}
 }
 
-@mixin oFooterServicesIcons($icon-name) {
+@mixin _oFooterServicesIcons($icon-name) {
 	position: relative;
 	padding-left: $_o-footer-services-icon-size - 5;
 
@@ -143,7 +120,7 @@
 	}
 }
 
-@mixin oFooterServicesLink($custom-link-base, $custom-link-hover, $custom-link-background, $link-hover: null) {
+@mixin _oFooterServicesLink($custom-link-base, $custom-link-hover, $custom-link-background, $link-hover: null) {
 	@include oTypographyLinkCustom(
 		$custom-link-base,
 		$custom-link-hover,
