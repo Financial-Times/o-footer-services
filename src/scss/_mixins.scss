@@ -83,7 +83,7 @@
 @mixin _oFooterServicesLogo($logo, $class: 'o-footer-services') {
 	// Ensure logo is valid.
 	// Allows dash, underscore, and alphanumeric characters which are url safe.
-	// Also alows a colon, which is url encoded.
+	// Also allows a colon, which is url encoded.
 	$valid-characters: ('-', '_', ':', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 	$url-encoded-logo: '';
 	@for $character-index from 1 through str-length($logo) {
