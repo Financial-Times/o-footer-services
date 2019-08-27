@@ -50,7 +50,7 @@
 			$allowed-social-images: (facebook, github, linkedin, pinterest, slack, tumblr, twitter, whatsapp, youtube);
 			// Error if one of the requested icons are not an Origami social share image.
 			@if(index($allowed-social-images, unquote($icon)) == null) {
-				@error '"#{$icon}" is not an Origami supported social image. Avalible icons are currently: #{$allowed-social-images}';
+				@error '"#{$icon}" is not an Origami supported social image, please contact that Origami team if you would like support for this icon to be added. Available icons are currently: #{$allowed-social-images}';
 			}
 			// Output icon class e.g. `.o-footer-services__icon-link--slack`
 			.o-footer-services__icon-link--#{$icon} {
