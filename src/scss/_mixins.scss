@@ -1,7 +1,7 @@
 @mixin _oFooterServicesBase() {
 	.o-footer-services {
 		@include oTypographySans(0);
-		background: oColorsGetPaletteColor(_oFooterServicesGet('default-background'));
+		background: oColorsByName(_oFooterServicesGet('default-background'));
 	}
 
 	.o-footer-services__container {
@@ -11,7 +11,7 @@
 		&:before {
 			content: '';
 			position: absolute;
-			border-top: 1px solid oColorsGetPaletteColor(_oFooterServicesGet('default-border'));
+			border-top: 1px solid oColorsByName(_oFooterServicesGet('default-border'));
 			top: 0;
 			left: 0;
 			right: 0;
@@ -33,7 +33,7 @@
 
 		&--legal {
 			@include oTypographySans($scale: -1, $line-height: 20px);
-			color: oColorsGetPaletteColor(_oFooterServicesGet('legal-text'));
+			color: oColorsByName(_oFooterServicesGet('legal-text'));
 			overflow: hidden;
 
 			p {
@@ -156,11 +156,15 @@
 		'context': $custom-link-background
 	));
 
+	// Link underline is different by design.
 	@if $link-hover != null {
 		&:hover {
-			border-bottom-color: oColorsGetPaletteColor($link-hover); // is different to custom link hover by design.
+			border-bottom-color: oColorsByName($link-hover);
 		}
 	} @else {
 		border-bottom: 0;
+		@supports (text-decoration-thickness: 0.25ex) {
+			text-decoration-line: none;
+		}
 	}
 }
