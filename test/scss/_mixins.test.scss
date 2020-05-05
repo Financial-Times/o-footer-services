@@ -59,11 +59,11 @@
 				@include oFooterServices(
 					$opts: (),
 					$include-base-styles: false
-                );
+				);
 			}
 			// Note we are using "expect" not "contains":
 			// With no options set and no base styles nothing should be output.
-			@include expect() {
+			@include expect() { //styleling-disable-lie block-no-empty
 			}
 		}
 	}
