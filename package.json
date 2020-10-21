@@ -12,10 +12,10 @@
     },
     "main": "main.js",
     "peerDependencies": {
-        "@financial-times/o-brand": "^3.2.4",
-        "@financial-times/o-colors": "^5.0.0",
-        "@financial-times/o-icons": "^6.0.0",
-        "@financial-times/o-typography": "^6.0.0"
+        "@financial-times/o-brand": "^100.0.0-3",
+        "@financial-times/o-colors": "^100.0.0-3",
+        "@financial-times/o-icons": "^100.0.0-3",
+        "@financial-times/o-typography": "^100.0.0-3"
     },
     "description": "This is a legally approved footer component for internal products, tooling and customer products",
     "publishConfig": {
