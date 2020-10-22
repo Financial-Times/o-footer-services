@@ -104,7 +104,7 @@ For users of the `whitelabel` brand, `o-footer-services` allows customisation us
 
 ```scss
 $o-brand: whitelabel;
-@import 'o-footer-services/main';
+@import '@financial-times/o-footer-services/main';
 
 // Customise o-footer-services colours
 @include oFooterServicesCustomize((
