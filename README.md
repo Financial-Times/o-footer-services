@@ -1,5 +1,11 @@
 # o-footer-services [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
+***
+
+**This component has moved to the [Origami Component System](https://github.com/Financial-Times/origami).**
+
+***
+
 o-footer-services is an [o-footer](https://registry.origami.ft.com/components/o-footer) alternative for tools, internal products, and specialist titles at the FT.
 
 - [Usage](#usage)
